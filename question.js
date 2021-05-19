@@ -9,7 +9,7 @@ const quiz =[
     },
     {
         q:'What color is a banana ?',
-        options:['red','yellow','white','blue'],
+        options:['purple','yellow','white','blue'],
         answer:1
     },
     {
