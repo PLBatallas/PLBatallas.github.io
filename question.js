@@ -1,7 +1,6 @@
 
 //array de objetos
 //ojo en el caso de usarlo con web speech answer no deberia ser un numero, deberia ser un array
-//INSTRUCCIONES: PARA 
 const quiz =[
     {
         q:'Wich month comes before june ?',
@@ -10,7 +9,7 @@ const quiz =[
     },
     {
         q:'What color is a banana ?',
-        options:['purple','yellow','white','blue'],
+        options:['red','yellow','white','blue'],
         answer:1
     },
     {
@@ -27,11 +26,6 @@ const quiz =[
         q:'What is 22 + 6?',
         options:['99','28','44','12'],
         answer:1
-    },
-    
-     {
-        q:'Who is the president of the USA?',
-        options:['Obama','Trump','Biden','Clinton'],
-        answer:2
     }
+    
 ]
