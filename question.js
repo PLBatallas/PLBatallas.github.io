@@ -1,6 +1,11 @@
-
-//array de objetos
-//ojo en el caso de usarlo con web speech answer no deberia ser un numero, deberia ser un array
+//Si se desea añadir, quitar o modificar una pregunta, respetar la estructura:
+/*
+{
+   q:'Pregunta',
+   options:['opcion0','opcion1','opcion2','opcion3'],
+   answer: Indicar el número de la opción que es correcta
+},
+*/
 const quiz =[
     {
         q:'Wich month comes before june ?',
@@ -26,6 +31,6 @@ const quiz =[
         q:'What is 22 + 6?',
         options:['99','28','44','12'],
         answer:1
-    }
+    } //observe que la última pregunta no cierra con coma ,
     
 ]
