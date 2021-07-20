@@ -13,9 +13,11 @@ const quiz =[
         answer:0
     },
     {
-        q:'What color is a banana ?',
-        options:['red','yellow','white','blue'],
-        answer:1
+       q:'Wich of this sentences uses first conditional ?',
+        options:['If I study today I will go to the party tonight',
+        'If it rained you would get wet',
+        'If you had told me about the meeting I would have come'],
+        answer:0
     },
     {
         q:'3 + 4 = 7 ?',
