@@ -2,7 +2,6 @@
 const Speechsynth = window.speechSynthesis;
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-
 const questionNumber = document.querySelector(".question-number");
 const questionText = document.querySelector(".question-text");
 const optionContainer = document.querySelector(".option-container");
@@ -12,26 +11,19 @@ const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
 const mic = document.querySelector(".micro");
 
-
-
-
 const recognition = new SpeechRecognition();
 recognition.continuous = false; //solo coge un resultado por reconocimiento
 recognition.lang = "en-GB";
 
-
-
-
-let questionCounter = 0;
-let currentQuestion;
-let availableQuestions = [];
-let availableOptions = [];
-let correctAnswers = 0;
-let attempt = 0;
-let contador = 0;
-let respuesta_dictada;
-let opcion = [];
-
+let questionCounter = 0; //
+let currentQuestion; //
+let availableQuestions = []; //
+let availableOptions = []; //
+let correctAnswers = 0; //
+let attempt = 0; //
+let contador = 0; //
+let respuesta_dictada; //
+let opcion = []; //
 
 //funcion hablar
 function speak (text){
@@ -84,8 +76,6 @@ recognition.addEventListener("end",endSpeechRecognition);
 function endSpeechRecognition(){
     console.log("Reconocimiento detenido")
     obtenerResultado();
-    
-    
 }
 
 recognition.addEventListener("result", resultOfSpeechRecognition)
@@ -157,49 +147,39 @@ function getNewQuestion(){
 //funciones para obtener el resultado
 function obtenerResultado(){ //Esta es para el modo oral
 
-    
-        if(respuesta_dictada.toString().toUpperCase() == currentQuestion.options[currentQuestion.answer].toString().toUpperCase()){
-            console.log("Respuesta correcta");
-            correctAnswers++;
-            updateAnswerIndicator("correct");
-            for(let i = 0; i<currentQuestion.options.length; i++){
-                if(opcion[i].id == currentQuestion.answer){
-                    opcion[i].classList.add("correct");
-                }
+    if(respuesta_dictada.toString().toUpperCase() == currentQuestion.options[currentQuestion.answer].toString().toUpperCase()){
+        console.log("Respuesta correcta");
+        correctAnswers++;
+        updateAnswerIndicator("correct");
+        for(let i = 0; i<currentQuestion.options.length; i++){
+            if(opcion[i].id == currentQuestion.answer){
+                opcion[i].classList.add("correct");
             }
-            
         }
-
-        else{
-            console.log("Respuesta erronea");
-            updateAnswerIndicator("wrong");
             
+    }
 
+    else{
+        console.log("Respuesta erronea");
+        updateAnswerIndicator("wrong");
+            
+        const optionLen = optionContainer.children.length;
+        for(let i = 0; i<optionLen; i++){
+            if(parseInt(optionContainer.children[i].id)===currentQuestion.answer){
+                optionContainer.children[i].classList.add("correct");
+            }
+            else{
+                optionContainer.children[i].classList.add("wrong");
+            }
 
-
-            const optionLen = optionContainer.children.length;
-            for(let i = 0; i<optionLen; i++){
-                if(parseInt(optionContainer.children[i].id)===currentQuestion.answer){
-                    optionContainer.children[i].classList.add("correct");
-                }
-                else{
-                    optionContainer.children[i].classList.add("wrong");
-
-                }
-
-             }
         }
-    
-
-    
-
+    }
     attempt++;
     unclickableOptions();
 }
 
 function getResult(opcionEscogida){ //para el modo tap
     //debemos pasar el id de la opcion que es tipo string a entero para comparar
-    //ojo en el caso de WEB SPEECH se debería de comparar los arrays
     const id = parseInt(opcionEscogida.id);
     if(id === currentQuestion.answer){
         //lo añadimos a la lista de correctas para mas tarde procesarlo y marcarlo en verde
@@ -221,6 +201,7 @@ function getResult(opcionEscogida){ //para el modo tap
         }
     }
     attempt++;
+    contador++;
     unclickableOptions();
 }
 
