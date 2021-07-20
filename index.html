@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/6ccc3aff3d.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Quiz</title>
 </head>
 
 <!--cada pantalla es una division-->
 <body>
     <div class = "home-box custom-box">
-        <h3>Instructions:</h3>
-        <p>Total number of questions: <span class = "total-question"></span> </p>
+        <h1>Instructions:</h1>
+        <h2>Total number of questions: <span class = "total-question"></span> </h2>
+        <p>Click to start the quiz! 
+           <!-- <br>First listen to the speech synthesizer.
+            <br>Then try the mic button to launch speech recognition.</p>-->
+        <p>Good luck and keep practicing!</p>
         <button type ="button" class = "btn" onclick="startQuiz()"> Start Quiz</button>
     </div>
 
@@ -29,27 +33,26 @@
         <div class ="next-question-button">
             
             <!--el boton next llama a la funcion next-->
-            <button type="button" class="btn" onclick="next()">Next</button>
+            <button type="button" class="micro fas fa-microphone"  onclick="reconocimiento()"> </button>
+            <button type="button" class="btn next" onclick="next()">Next</button>
+
         </div>
+
         <div class ="answers-indicator">
           
         </div>
     
-        <div class ="mic-button"> 
-         <!--Boton que activa el speech recognition-->
-          <button type="button" class="micro fas fa-microphone" onclick="reconocimiento()"> </button>
-
-        </div>
+        
     </div>
     <div class ="result-box custom-box hide">
         <h1>Quiz Result</h1>
         <table>
             <tr>
-                <td>Total Question</td>
+                <td>Total Questions</td>
                 <td><span class ="total-question"></span></td>
             </tr>
             <tr>
-                <td>Attempt</td>
+                <td>Attempts</td>
                 <td><span class ="total-attempt"></span></td>
             </tr>
             <tr>
@@ -70,7 +73,7 @@
             </tr>
         </table>
         <button type="button" class="btn" onclick="tryAgainQuiz()">Try Again</button>
-        <button type="button" class="btn" onclick="goToHome()">Go to Home</button>
+        <button type="button" class="btn" onclick="goToHome()">Go Home</button>
 
     </div>
     
