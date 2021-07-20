@@ -26,7 +26,7 @@ const quiz =[
     },
     {
         q:'If a value does not change, we could say it',
-        options:['Increases','Remains steady','fluctuate'],
+        options:['Increases','Remains steady','fluctuates'],
         answer:1
     },
     {
