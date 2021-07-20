@@ -85,6 +85,11 @@ body{
     font-size: 16px;
     cursor: pointer;
     display: inline-block;
+    
+}
+
+.btn.next{
+    float: right;
 }
 
 .micro{
@@ -92,12 +97,13 @@ body{
     margin-left: auto;
     display: block;
     padding: 45px 45px;
-    background-color: #009688;
+    background-color: rgba(238, 16, 16, 0.871);
     color:black;
     border:none;
     border-radius: 100%;
     font-size: 16px;
     cursor: pointer;
+    display: inline-block;
 
 }
 
@@ -115,9 +121,6 @@ body{
     float: left;
 
 }
-
-
-
 
 .quiz-box .question-number{
     font-size: 18px;
